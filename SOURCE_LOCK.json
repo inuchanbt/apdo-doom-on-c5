@@ -10,7 +10,7 @@
   },
   "c5": {
     "native_version": "v9.1",
-    "publication_status": "owner-tested on one C5; pre-release candidate; full readback and restoration pending",
+    "publication_status": "owner-tested on one C5, including functional restoration to stock V8.5; pre-release candidate; full preservation audit pending",
     "package_sha256": "186bd3aea083dc85c3b7de2e115a6d6f1eb0d74c1c5a70ed11ed5e1ddbc127bb",
     "game_pack_sha256": "8e020d3822edf873b0209c92dfbb6518bb8a92c6fe9fdb64be17d66699ae2664",
     "boot_prefix_bytes": 14336,

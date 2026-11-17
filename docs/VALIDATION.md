@@ -9,7 +9,7 @@ The [2026-11-17 public-source check record](TEST_RESULTS.md) lists the executed 
 | Native v7 | Owner accepted standalone gameplay, four buttons, gap-free HUD and improved scanout on one C5 | Does not qualify other units or long-duration stability |
 | Native v8 | Owner confirmed PC controls on that C5 | Its 80×43 preview was too coarse for play |
 | Native v9 | Owner saw banner/first game image, then CPU FAULT with CFSR `00010000` | Exact stacked fault PC was not captured |
-| Native v9.1 / 0.1.0-rc.1 | Owner confirmed standalone play, PC controls, preview/enlarge/save, physical flip and brightness; live HID/JPEG reception recorded | One C5 only; long-duration stability, new full Flash readback and restoration remain unverified |
+| Native v9.1 / 0.1.0-rc.1 | Owner confirmed standalone play, PC controls, preview/enlarge/save, physical flip/brightness, then normal operation after restoring stock V8.5; live HID/JPEG reception recorded | One C5 only; long-duration stability and new full Flash preservation audit remain unverified |
 
 v9 accidentally used `fpv5-sp-d16` with Cortex-M4 and emitted eight VRINTZ
 instructions unsupported by that target. v9.1 uses `fpv4-sp-d16`, rejects unknown
@@ -54,6 +54,9 @@ a demonstrated USB firmware defect. Fully remove other power feeds when restarti
 
 This supports a **one-unit functional Pre-release**, not stable or broad hardware
 qualification. Long-duration stability, a new post-install dual-read preservation
-audit and stock restoration from this candidate remain unverified. Disconnect/blur
+audit remain unverified. The owner subsequently reported restoring stock V8.5
+on the same unit and trying its functions without observing problems. This
+functional check does not prove byte-for-byte Flash preservation or calibration
+accuracy. Disconnect/blur
 release timing and repeated power-cycle behavior have offline coverage but no
 separate physical acceptance record here. The assistant did not flash the unit.

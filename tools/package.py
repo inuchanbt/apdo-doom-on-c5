@@ -76,7 +76,8 @@ def main():
         kit['firmware/build/' + name] = (ROOT / 'firmware/build' / name).read_bytes()
     report = {'version': VERSION, 'publication_action_performed': False,
               'owner_functional_check_passed': True, 'hardware_units_tested': 1,
-              'post_install_full_readback_verified': False, 'stock_restoration_verified': False,
+              'post_install_full_readback_verified': False, 'stock_restoration_verified': True,
+              'stock_restoration_scope': 'owner reported normal operation after return to V8.5 on the same C5; not a full preservation or calibration audit',
               'firmware_sha256': expected, 'source_included': True, 'archives': []}
     for suffix, files in [('source', source), ('install', kit)]:
         filename = f'APDO-DOOM-C5-{VERSION}-{suffix}.zip'

@@ -12,9 +12,11 @@ to enter the stock DFU screen, and use the official WITRN updater with the corre
 official C5 package. Close the updater and reconnect normally afterwards.
 Do not substitute C4/C4L images or another unit's full dump.
 
-The development unit demonstrated DFU access, an earlier stock update/readback
-and earlier custom applications. **Stock restoration after the current v9.1
-candidate and its post-install full readback are not yet verified.**
+On 2026-11-17, after the v9.1 game and PC checks, the owner reported returning
+the same C5 to **stock V8.5** and trying its functions without observing problems.
+This is a one-unit functional restoration report. It does not establish
+byte-for-byte Flash preservation, calibration accuracy or every stock function;
+a new full readback/preservation audit remains unverified.
 The native game relies on a pinned stock bootloader and private functions;
 replacing the bootloader is outside this project's installation procedure.
 

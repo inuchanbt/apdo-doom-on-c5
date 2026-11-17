@@ -24,8 +24,10 @@ owner installed the exact v9.1 package and confirmed normal standalone gameplay,
 PC keyboard controls, preview/enlarge/save, physical flip and brightness. Live
 HID/JPEG reception was recorded, with 220 connected/error-free status samples over
 about 90 seconds. See [the sanitized summary](validation/owner-unit-v9.1-20261117.json).
-The assistant did not flash the unit. A new full DFU readback/preservation audit,
-restoration from this candidate and long-duration stability remain unverified.
+The owner then reported restoring stock V8.5 on the same C5 and trying its functions
+without observing problems. The assistant did not flash the unit. A new full DFU
+readback/preservation audit and long-duration stability remain unverified; the
+functional restoration report does not establish calibration accuracy or all stock functions.
 The large controller screenshot is a fixture; the separate small JPEG is an
 actual frame received from the owner's C5.
 
@@ -39,4 +41,6 @@ actual frame received from the owner's C5.
 初期のビルド・配布確認では実機へアクセスしていません。その後、所有者が正確なv9.1を導入し、
 本体プレイ、PCキー操作、プレビュー拡大・保存、反転・明るさを確認しました。
 実機のHID／JPEG受信も記録し、約90秒・220件の状態応答はすべて接続継続・エラー0でした。
-アシスタントは実機へ書き込んでいません。新たな全Flash監査、この版からの純正復帰、長時間安定性は未確認です。
+その後、所有者から同じ個体で純正V8.5への復帰・各種操作が正常との報告がありました。
+アシスタントは実機へ書き込んでいません。新たな全Flash保持監査と長時間安定性は未確認で、
+機能上の復帰報告は校正精度や純正の全機能の実証とは区別します。

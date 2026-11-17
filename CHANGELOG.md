@@ -11,5 +11,7 @@
   stacked PC/LR fault diagnostics from native v9.1.
 - Owner confirmed v9.1 standalone play, PC controls, preview/enlarge/save,
   physical flip and brightness on one C5; live HID/JPEG reception recorded.
-- Long-duration stability, a new full Flash preservation audit, restoration
-  from this candidate and other units/bootloaders remain unverified.
+- Follow-up: owner restored stock V8.5 on the same C5 and tried its functions
+  without observing problems. This is a functional report, not a full Flash audit.
+- Long-duration stability, a new full Flash preservation audit and other
+  units/bootloaders remain unverified.

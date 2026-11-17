@@ -103,7 +103,7 @@ def main():
         if len(p)==3 and p[0].startswith('.') and p[1].isdigit():sections[p[0]]=int(p[1])
     assert sections['.data']+sections['.bss']<=80*1024
     manifest={'schema':'c5-native-doom-v9.1','hardware_tested':True,'hardware_units_tested':1,
-              'hardware_test_scope':'owner: gameplay, PC controls/JPEG preview, flip/brightness; full readback and restoration pending',
+              'hardware_test_scope':'owner: gameplay, PC controls/JPEG preview, flip/brightness, functional return to stock V8.5; full preservation audit pending',
               'package_bytes':len(package),
               'payload_bytes':len(payload),'raw_image_bytes':len(raw),'package_sha256':sha(package),
               'baseline_sha256':baseline_sha,'boot_sha256':boot_sha,

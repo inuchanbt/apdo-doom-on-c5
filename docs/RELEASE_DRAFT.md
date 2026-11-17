@@ -8,8 +8,9 @@ JPEG preview, physical 180° rotation and brightness adjustment.
 
 The owner has now confirmed v9.1 standalone play, PC controls, preview/enlarge/save,
 physical flip and brightness on one C5. Live HID/JPEG reception was recorded.
-This remains a Pre-release; a new full readback, stock restoration and
-long-duration stability are unverified. See the final release text above.
+The owner subsequently restored stock V8.5 and reported normal operation on that
+unit. This remains a Pre-release; a new full preservation audit and long-duration
+stability are unverified. See the final release text above.
 
 Planned assets: install ZIP with firmware, complete matching source, Windows
 setup/menu, read-only backup/qualification/audit tools, English/Japanese docs,
@@ -29,8 +30,9 @@ WITRN C5でFreedoom E1M1を本体単独プレイできる、APDO DOOMの公開�
 本体ボタンとPC操作、320×172 JPEGプレビュー、本体の180度反転・明るさ調整を備えます。
 
 v9.1の本体プレイ、PC操作、プレビュー拡大・保存、反転・明るさは所有者の1台で確認しました。
-実機HID／JPEG受信も記録しています。長時間安定性、新たな全Flash監査、純正復帰は未確認で、
-Pre-releaseとして扱います。最終の英日リリース文は上記リンクを参照してください。
+実機HID／JPEG受信も記録しています。その後、同じ個体で純正V8.5復帰・操作正常との報告がありました。
+長時間安定性と新たな全Flash保持監査は未確認で、Pre-releaseとして扱います。
+最終の英日リリース文は上記リンクを参照してください。
 
 配布予定ZIPにはファーム、対応ソース、Windows用セットアップ・メニュー、読み取り専用のバックアップ・
 適合確認・導入監査、英日手順、ライセンス、チェックサムを含みます。

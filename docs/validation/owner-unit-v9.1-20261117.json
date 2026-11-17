@@ -9,7 +9,8 @@
     "pc_keyboard_controls": true,
     "preview_enlarge_and_save": true,
     "physical_180_degree_rotation": true,
-    "physical_brightness_changes": true
+    "physical_brightness_changes": true,
+    "stock_v8_5_restoration_and_functional_check": true
   },
   "read_only_live_observation": {
     "samples": 220,
@@ -42,9 +43,17 @@
   "remaining_unverified": {
     "long_duration_stability": true,
     "candidate_full_flash_readback_and_preservation": true,
-    "stock_restoration_from_this_candidate": true,
+    "stock_restoration_from_this_candidate": false,
     "other_units_or_bootloaders": true
   },
   "assistant_sent_device_inputs": false,
-  "assistant_flashed_device": false
+  "assistant_flashed_device": false,
+  "stock_restoration_follow_up": {
+    "date": "2026-11-17",
+    "basis": "owner report",
+    "stock_version": "V8.5",
+    "same_unit": true,
+    "owner_report": "純正V8.5に戻して色々触ったけど、全く問題ない",
+    "scope": "functional use without observed problems; not a full Flash preservation, calibration-accuracy or exhaustive-feature audit"
+  }
 }

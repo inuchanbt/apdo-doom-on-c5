@@ -10,8 +10,9 @@ it; PC controls and screen preview are optional during play.
 **Current candidate: native v9.1 / package `0.1.0-rc.1`.** The owner confirmed
 standalone gameplay, PC keyboard controls, JPEG preview/enlarge/save, physical
 rotation and brightness on **one C5**. Live HID telemetry and JPEG reception were
-also recorded. This is a **Pre-release**, with long-duration stability, a new full
-Flash audit and restoration from this candidate still unverified.
+also recorded. The owner subsequently restored **stock V8.5** and tried its
+functions without observing problems. This is a **Pre-release**: long-duration
+stability and a new full Flash preservation audit remain unverified.
 See [the evidence and limits](docs/VALIDATION.md).
 
 ![PC controller rendered with a host fixture](docs/images/c5-pc-controller.png)
