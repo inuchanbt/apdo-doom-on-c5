@@ -1,6 +1,7 @@
 # Public candidate checks — 2026-11-17
 
-These are offline/host results, not a C5 hardware acceptance report.
+The first table records the offline/host checks. The subsequent owner-unit check
+is listed separately below; it does not establish long-duration or other-unit compatibility.
 
 | Check | Result |
 | --- | --- |
@@ -18,9 +19,15 @@ These are offline/host results, not a C5 hardware acceptance report.
 | Prepared Windows kit | Extracted under a path containing spaces and Japanese text; all per-file checksums and local documentation links passed |
 | Windows entry points | `setup.cmd` with an explicit Python 3.14 executable created a fresh virtual environment and installed hidapi 0.15.0; `C5-Tools.cmd check` passed |
 
-No controller, monitor, DFU probe, backup, updater or Flash writer was run against
-a physical C5 during this workflow. Binary release publication remains on hold.
-The screenshot in the READMEs is the browser fixture, with synthetic status/FPS.
+The initial build/package checks did not access a physical device. Afterwards the
+owner installed the exact v9.1 package and confirmed normal standalone gameplay,
+PC keyboard controls, preview/enlarge/save, physical flip and brightness. Live
+HID/JPEG reception was recorded, with 220 connected/error-free status samples over
+about 90 seconds. See [the sanitized summary](validation/owner-unit-v9.1-20261117.json).
+The assistant did not flash the unit. A new full DFU readback/preservation audit,
+restoration from this candidate and long-duration stability remain unverified.
+The large controller screenshot is a fixture; the separate small JPEG is an
+actual frame received from the owner's C5.
 
 ## 日本語
 
@@ -29,4 +36,7 @@ The screenshot in the READMEs is the browser fixture, with synthetic status/FPS.
 ブラウザーの差し替え応答テストが合格しています。
 空白と日本語を含む展開先でチェックサムと文書リンクを確認し、Pythonのパスを指定した
 `setup.cmd` と `C5-Tools.cmd check` も実行しました。
-実機にはアクセスせず、バイナリのリリース公開は保留しています。
+初期のビルド・配布確認では実機へアクセスしていません。その後、所有者が正確なv9.1を導入し、
+本体プレイ、PCキー操作、プレビュー拡大・保存、反転・明るさを確認しました。
+実機のHID／JPEG受信も記録し、約90秒・220件の状態応答はすべて接続継続・エラー0でした。
+アシスタントは実機へ書き込んでいません。新たな全Flash監査、この版からの純正復帰、長時間安定性は未確認です。

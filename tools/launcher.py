@@ -37,7 +37,7 @@ def main():
     args = parser.parse_args()
     action = args.action
     if action is None:
-        print('APDO DOOM on WITRN C5 - v9.1 HARDWARE-UNVERIFIED CANDIDATE')
+        print('APDO DOOM on WITRN C5 - v9.1 OWNER-TESTED PRE-RELEASE (ONE C5)')
         print('1 Check files / 2 PC controller / 3 Monitor / 4 Read-only DFU backup / 0 Exit')
         action = {'1': 'check', '2': 'controller', '3': 'monitor', '4': 'backup'}.get(input('> ').strip())
     if action is None:

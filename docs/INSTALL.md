@@ -1,9 +1,9 @@
-# Install and run — hardware-unverified v9.1 candidate
+# Install and run — one-unit-tested v9.1 Pre-release
 
 [日本語](INSTALL.ja.md) · [Recovery](RECOVERY.md)
 
-Binary publication is on hold pending the owner's hardware check. The following
-procedure is for the prepared candidate kit; do not skip device qualification.
+The owner checked the major functions on one C5. This remains a Pre-release;
+read the limits in [validation](VALIDATION.md) and do not skip device qualification.
 
 1. Extract the whole kit to a writable folder. Install Python 3.11+ for Windows
    if needed. Run `setup.cmd`; it creates a local `.venv` and installs pinned
@@ -24,7 +24,8 @@ procedure is for the prepared candidate kit; do not skip device qualification.
 6. Close the helper. Open the official updater and install
    `firmware/build/C5-native-doom-v9.1.c4ser`. This replaces the stock measurement
    app. The kit provides no C5-specific erase/program/restore helper.
-7. Close the updater. Reconnect **without holding OK**. Check the banner, game,
+7. Close the updater. Disconnect all cables to remove every power feed, then
+   reconnect the PC to HID **without holding OK**. Check the banner, game,
    physical buttons, movement, firing and menus before starting the PC helper.
 8. Choose **2** in `C5-Tools.cmd` for PC control. The helper opens
    `http://127.0.0.1:8768/`. Enable keyboard control on the page. Test preview on

@@ -30,7 +30,7 @@ def main():
             print(result.stdout[-3000:] + result.stderr[-3000:])
             raise SystemExit(result.returncode)
         print('PASS', label, flush=True)
-    print('All offline checks passed; hardware remains unverified.')
+    print('All offline checks passed. See docs/VALIDATION.md for the separate one-unit hardware scope.')
 
 
 if __name__ == '__main__':

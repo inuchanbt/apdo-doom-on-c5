@@ -7,15 +7,20 @@ Freedoom 0.13.0 E1M1 level with reduced artwork. Once installed, the game runs
 from the C5's internal Flash with power alone. A Windows PC is needed to install
 it; PC controls and screen preview are optional during play.
 
-**Current source: native v9.1 / planned package `0.1.0-rc.1`. Hardware verification
-is pending. Binary release publication is on hold.** Earlier v7 gameplay and v8
-PC controls were owner-tested on one unit. v9 faulted on hardware; v9.1 fixes an
-incompatible FPU instruction setting and passes offline checks, but has not yet
-been verified on the C5. See [the evidence and limits](docs/VALIDATION.md).
+**Current candidate: native v9.1 / package `0.1.0-rc.1`.** The owner confirmed
+standalone gameplay, PC keyboard controls, JPEG preview/enlarge/save, physical
+rotation and brightness on **one C5**. Live HID telemetry and JPEG reception were
+also recorded. This is a **Pre-release**, with long-duration stability, a new full
+Flash audit and restoration from this candidate still unverified.
+See [the evidence and limits](docs/VALIDATION.md).
 
 ![PC controller rendered with a host fixture](docs/images/c5-pc-controller.png)
 
 *Host-generated controller fixture, not a C5 hardware capture. Its status/FPS values are test data.*
+
+![Actual JPEG received from the owner's C5 running v9.1](docs/images/c5-device-v9.1.jpg)
+
+*Actual 320×172 JPEG received from the owner's C5 during the v9.1 check.*
 
 ## Features
 
@@ -45,8 +50,8 @@ and all personal Flash backups are excluded from this repository.
 
 A prepared Windows kit contains the `.c4ser`, matching source, controller,
 read-only backup/audit tools, English/Japanese instructions, notices and checksums.
-There is **no published binary release yet**. Do not install the development
-candidate as though it were a validated stable release.
+Download the candidate from [v0.1.0-rc.1](https://github.com/inuchanbt/apdo-doom-on-c5/releases/tag/v0.1.0-rc.1).
+It is a pre-release, not a stable release or a claim of compatibility with every C5.
 
 ## Controls
 

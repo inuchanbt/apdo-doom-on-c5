@@ -74,7 +74,9 @@ def main():
     kit = dict(source)
     for name in BUILD_FILES:
         kit['firmware/build/' + name] = (ROOT / 'firmware/build' / name).read_bytes()
-    report = {'version': VERSION, 'release_published': False, 'hardware_verified': False,
+    report = {'version': VERSION, 'publication_action_performed': False,
+              'owner_functional_check_passed': True, 'hardware_units_tested': 1,
+              'post_install_full_readback_verified': False, 'stock_restoration_verified': False,
               'firmware_sha256': expected, 'source_included': True, 'archives': []}
     for suffix, files in [('source', source), ('install', kit)]:
         filename = f'APDO-DOOM-C5-{VERSION}-{suffix}.zip'

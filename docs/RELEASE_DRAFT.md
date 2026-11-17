@@ -1,13 +1,15 @@
-# APDO DOOM on C5 0.1.0-rc.1 — draft, publication on hold
+# APDO DOOM on C5 0.1.0-rc.1 — preparation notes
+
+The final bilingual release text is [v0.1.0-rc.1](releases/v0.1.0-rc.1.md).
 
 Native DOOM/Freedoom E1M1 on the WITRN C5, with standalone play, physical buttons
 and optional browser PC controls. This candidate includes a full-panel 320×172
 JPEG preview, physical 180° rotation and brightness adjustment.
 
-**Hardware-unverified candidate. Do not publish this draft until the owner's
-device check is recorded.** Native v7 gameplay and v8 PC controls worked on one
-owner unit; v9 faulted. This v9.1 image corrects the Cortex-M4 FPU instruction
-setting and includes PC/LR fault diagnostics, but its device behavior is pending.
+The owner has now confirmed v9.1 standalone play, PC controls, preview/enlarge/save,
+physical flip and brightness on one C5. Live HID/JPEG reception was recorded.
+This remains a Pre-release; a new full readback, stock restoration and
+long-duration stability are unverified. See the final release text above.
 
 Planned assets: install ZIP with firmware, complete matching source, Windows
 setup/menu, read-only backup/qualification/audit tools, English/Japanese docs,
@@ -26,9 +28,9 @@ Read [installation](INSTALL.md), [recovery](RECOVERY.md) and [validation](VALIDA
 WITRN C5でFreedoom E1M1を本体単独プレイできる、APDO DOOMの公開候補です。
 本体ボタンとPC操作、320×172 JPEGプレビュー、本体の180度反転・明るさ調整を備えます。
 
-**実機未確認の候補版です。所有者の実機確認を記録するまで公開を保留しています。**
-v7のゲームとv8のPC操作は1台で確認済みですが、v9ではCPU FAULTが発生しました。
-今回のv9.1はCortex-M4のFPU命令設定を修正し、異常時PC／LR表示を追加した候補で、実機確認待ちです。
+v9.1の本体プレイ、PC操作、プレビュー拡大・保存、反転・明るさは所有者の1台で確認しました。
+実機HID／JPEG受信も記録しています。長時間安定性、新たな全Flash監査、純正復帰は未確認で、
+Pre-releaseとして扱います。最終の英日リリース文は上記リンクを参照してください。
 
 配布予定ZIPにはファーム、対応ソース、Windows用セットアップ・メニュー、読み取り専用のバックアップ・
 適合確認・導入監査、英日手順、ライセンス、チェックサムを含みます。
