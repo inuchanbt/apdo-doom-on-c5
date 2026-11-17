@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+/dist/
+/work/
+/backups/
+/captures/
+/verification/
+/tools/llvm-mingw-*/
+/firmware/build/
+/firmware/host-build/
+/firmware/host-reference/
+/vendor/dmc100-doom/dl/

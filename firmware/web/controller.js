@@ -1,0 +1,23 @@
+"use strict";
+const $=id=>document.getElementById(id),keys={KeyW:2,ArrowUp:2,KeyS:128,ArrowDown:128,KeyA:4,ArrowLeft:4,KeyD:8,ArrowRight:8,Space:1,ControlLeft:1,ControlRight:1,KeyE:16,Escape:32,Enter:64,NumpadEnter:64};
+const held=new Map();let token="",armed=false,connected=false,connection=null,sequence=0,sending=false,pending=[];
+function mask(){let v=0;for(const x of held.values())v|=x;return v;}
+function paint(){const m=mask();document.querySelectorAll('[data-key]').forEach(b=>b.classList.toggle('active',!!(m&Number(b.dataset.key))));$('enable').textContent=armed?'キーボード操作中':'キーボード操作を有効にする';}
+async function post(path,data){const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json','X-C5-Token':token},body:JSON.stringify(data),keepalive:true});if(!r.ok)throw Error('接続を確認し、キーボード操作を有効にしてください');}
+async function drain(){if(sending||!token)return;sending=true;try{while(pending.length){const a=pending.shift();await post(a.release?'/api/release':'/api/keys',a.release?{}:{buttons:a.mask});}}catch(e){held.clear();armed=false;pending=[];paint();$('error').textContent=e.message;}finally{sending=false;}}
+function queue(){pending.push({mask:mask()});paint();void drain();}
+function release(){held.clear();armed=false;pending=[{release:true}];paint();void drain();}
+$('enable').onclick=()=>{if(connected){armed=true;queue();}};$('release').onclick=release;
+window.addEventListener('keydown',e=>{if(!armed||!(e.code in keys))return;e.preventDefault();if(!held.has(e.code)){held.set(e.code,keys[e.code]);queue();}});
+window.addEventListener('keyup',e=>{if(held.delete(e.code)){e.preventDefault();queue();}});
+window.addEventListener('blur',release);window.addEventListener('pagehide',release);document.addEventListener('visibilitychange',()=>{if(document.hidden)release();});
+document.querySelectorAll('[data-key]').forEach(b=>{b.addEventListener('pointerdown',e=>{if(!connected)return;e.preventDefault();b.setPointerCapture(e.pointerId);held.set('p'+e.pointerId,Number(b.dataset.key));queue();});const up=e=>{if(held.delete('p'+e.pointerId))queue();};b.addEventListener('pointerup',up);b.addEventListener('pointercancel',up);b.addEventListener('lostpointercapture',up);});
+async function settings(){release();$('settings-state').textContent='反映待ち';try{await post('/api/display',{brightness:Number($('brightness').value),flip:$('flip').checked});}catch(e){$('error').textContent=e.message;}}
+$('flip').onchange=settings;$('brightness').oninput=()=>{$('brightness-value').textContent=$('brightness').value+'%';};$('brightness').onchange=settings;
+$('preview').onchange=()=>void post('/api/preview',{enabled:$('preview').checked}).catch(e=>$('error').textContent=e.message);
+$('enlarge').onclick=()=>{release();$('large-screen').src=$('screen').src;$('large').showModal();};$('close').onclick=()=>$('large').close();
+async function status(){try{const s=await(await fetch('/api/status')).json();if(connection!==null&&s.connection_id!==connection)release();connection=s.connection_id;connected=s.connected;$('enable').disabled=!connected;$('connection').textContent=connected?'● C5 接続済み':'C5 v9を待っています';$('connection').classList.toggle('online',connected);if(!connected&&armed)release();$('error').textContent=s.error||'';$('performance').textContent=connected?`${s.fps.toFixed(1)} fps · 描画 ${s.reply.render_ms} ms · LCD ${s.reply.present_ms} ms`:'— fps';$('preview').checked=s.preview_enabled;
+$('flip').disabled=$('brightness').disabled=!connected;if(s.display&&s.display.brightness){if(document.activeElement!==$('brightness')){$('brightness').value=s.display.brightness;$('brightness-value').textContent=s.display.brightness+'%';}$('flip').checked=s.display.flip;document.querySelector('.device').classList.toggle('flipped',s.display.flip);$('settings-state').textContent=s.display.pending?'反映待ち':'本体設定';}
+if(s.screen){if(s.screen.sequence!==sequence){sequence=s.screen.sequence;$('screen').src='/api/frame.jpg?n='+sequence;if($('large').open)$('large-screen').src=$('screen').src;}$('screen').hidden=false;$('placeholder').hidden=true;$('save').hidden=false;$('enlarge').disabled=false;$('screen-info').textContent=s.preview_enabled?`本体フレーム ${s.screen.game_frame} · 320 × 172 JPEG プレビュー`:'プレビュー停止中 · 本体は動作中';}else{sequence=0;$('screen').hidden=true;$('placeholder').hidden=false;$('save').hidden=true;$('enlarge').disabled=true;$('screen-info').textContent=s.preview_enabled?'画面を待っています':'プレビュー停止中';}
+}catch{connected=false;$('connection').textContent='コントローラー停止';$('enable').disabled=true;if(armed)release();}}
+fetch('/api/session').then(r=>r.json()).then(s=>{token=s.token;void status();});setInterval(status,300);setInterval(()=>{if(armed||held.size)queue();},100);paint();

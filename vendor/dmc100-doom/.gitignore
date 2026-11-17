@@ -1,0 +1,11 @@
+# Preserve the converter input JSON while excluding other generated outputs.
+/build/*
+!/build/conv/
+/build/conv/*
+!/build/conv/upstream.json
+/dl/
+# C5 ships generated inputs and the pinned oracle sources for reproducibility.
+*.elf
+*.o
+*.d
+__pycache__/

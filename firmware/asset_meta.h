@@ -1,0 +1,2 @@
+#define C5_PACK_BYTES 1056192u
+#define C5_BLOB_BYTES 780552u

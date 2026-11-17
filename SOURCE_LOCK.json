@@ -1,0 +1,23 @@
+{
+  "engine": {
+    "url": "https://github.com/ArturBieniek4/DMC100-Doom",
+    "revision": "0cdc78eb66cdddacc43112d5f79c258c4a5440b7",
+    "patch": "patches/dmc100-doom.patch"
+  },
+  "doomgeneric": {
+    "url": "https://github.com/ozkl/doomgeneric",
+    "revision": "dcb7a8dbc7a16ce3dda29382ac9aae9d77d21284"
+  },
+  "c5": {
+    "native_version": "v9.1",
+    "publication_status": "hardware-unverified candidate",
+    "package_sha256": "186bd3aea083dc85c3b7de2e115a6d6f1eb0d74c1c5a70ed11ed5e1ddbc127bb",
+    "game_pack_sha256": "8e020d3822edf873b0209c92dfbb6518bb8a92c6fe9fdb64be17d66699ae2664",
+    "boot_prefix_bytes": 14336,
+    "boot_prefix_sha256": "aaf175a47bda0ad2f4a5b66f6759ac157b16fb4cccd565a13b63b0e182cab30d"
+  },
+  "toolchain": {
+    "distribution": "llvm-mingw-20261020-ucrt-x86_64",
+    "clang": "23.1.4"
+  }
+}

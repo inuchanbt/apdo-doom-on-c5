@@ -1,0 +1,12 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.c text eol=lf
+*.h text eol=lf
+*.json text eol=lf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.bin binary
+*.DAT binary
+*.png binary
+*.c4ser binary
